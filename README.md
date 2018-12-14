@@ -20,7 +20,8 @@ get_time_cross_nunique 对交叉特征做time上的统计
 也试过对onehot和countvector部分做stacking特征，线下有千分点的提升，线上崩了。  
 
 4.关于bagging:  
-主要是lgb，xgb和catboost的加权，lgb权重可以设置大一些。
+主要是lgb，xgb和catboost的加权，lgb权重可以设置大一些。  
+catboost没办法用稀疏矩阵，onehot改成labelencoder，但是训练效果会变差。  
 
 特征还是主要是以用户为主体  
 感觉需要看下前排大佬的开源，好好学习，还是太菜了。
