@@ -10,7 +10,7 @@ python cat_main.py
 python bagging.py  
 
 3.特征工程:  
-get_cross 交叉特征  
+get_cross 交叉特征，交叉特征是效果比较好的特征，大概能提0.05-0.1个百分点  
 get_ratio 转化率特征  
 get_merchant_feature 商户统计特征  
 get_time_features，get_all_time_fea 时间统计特征  
@@ -20,8 +20,8 @@ get_time_cross_nunique 对交叉特征做time上的统计
 也试过对onehot和countvector部分做stacking特征，线下有千分点的提升，线上崩了。  
 
 4.关于bagging:  
-主要是lgb，xgb和catboost的加权，lgb权重可以设置大一些。  
-catboost没办法用稀疏矩阵，onehot改成labelencoder，但是训练效果会变差。  
+主要是lgb，xgb和catboost的加权，lgb权重可以设置大一些。最后用的是(0.8*xgb+0.2*cgb)*0.5+0.5*lgb  
+catboost没办法用稀疏矩阵，onehot改成labelencoder，但是训练效果会变差，线下大概比onehot训练的少0.005个百分点。  
 
 特征还是主要是以用户为主体  
 感觉需要看下前排大佬的开源，好好学习，还是太菜了。
