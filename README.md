@@ -1,5 +1,12 @@
-# DC_TianCheng
-
+# DC_TianCheng  
+2019.1.17    
+参考了一下qyxs大佬的代码，主要还是对UID做统计特征。  
+首先对UID做nunique统计，代码：  
+df = pd.DataFrame(data.groupby(col)['UID'].nunique())  
+df.columns = ['cnt_uid_' + col]  
+然后把df merge回原来的表，在对UID做groupby操作，代码示例如下：  
+sample_data.groupby('UID')['cnt_uid_' + rv].max()  
+---------------更新分割线------------------  
 1.46/2139  
 复赛A榜0.47，B榜0.44010    
 2.运行顺序：  
