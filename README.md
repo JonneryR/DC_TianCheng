@@ -7,7 +7,7 @@ df.columns = ['cnt_uid_' + col]
 然后把df merge回原来的表，在对UID做groupby操作，代码示例如下：  
 sample_data.groupby('UID')['cnt_uid_' + rv].max()  
 ---------------更新分割线------------------  
-1.46/2139  
+1.复赛A榜26/2139，B榜46/2139，在一些容易过拟合的特征上面处理不够仔细。  
 复赛A榜0.47，B榜0.44010    
 2.运行顺序：  
 python get_feature.py  
